@@ -10,18 +10,18 @@ const DashboardLayout = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const menuItems = [
-        { name: "Overview", href: "/user-dashboard/overview" },
+         { name: "Overview", href: "/user-dashboard/overview" },
         { name: "Add Products", href: "/user-dashboard/add-product" },
     ];
 
     return (
-        <div className="min-h-screen flex flex-col md:flex-row bg-white">
+        <div className="min-h-screen flex flex-col md:flex-row ">
             {/* Mobile Navbar */}
             <div className="md:hidden bg-blue-400 flex items-center justify-between p-4 shadow-md">
                 <Link href='/'>
                 <div className="flex justify-center items-center gap-2">
-                    <img className="w-12 h-12 rounded-full" src="/my-store.webp" alt="" />
-                    <span className="text-2xl font-bold text-blue-600">MyStore</span>
+                   <img className="w-8" src="/shopping-bag-cart-icon.svg" alt="" />
+                    <span className="text-2xl font-bold text-blue-600">MyShop</span>
                 </div>
                 </Link>
                 <button
@@ -35,13 +35,16 @@ const DashboardLayout = ({ children }) => {
             {/* Sidebar */}
             <aside
                 className={`
-          bg-white p-6 rounded-r-2xl shadow-lg
+          p-6 rounded-r-2xl bg-gray-50 shadow-lg
           md:w-64 w-60 md:block ${isOpen ? "block" : "hidden"}
         `}
             >
-                <h2 className="text-2xl font-bold mb-8 text-gray-800 hidden md:block">
-                    MyStore
-                </h2>
+                <Link href='/'>
+                    <div className="flex justify-center items-center gap-2 mb-3">
+                        <img className="w-12 h-12 rounded-full" src="/shopping-bag-cart-icon.svg" alt="" />
+                        <span className="text-2xl font-bold text-blue-600">MyShop</span>
+                    </div>
+                </Link>
                 <ul className="space-y-4">
                     {menuItems.map((item) => {
                         const isActive = pathname === item.href;
@@ -50,8 +53,8 @@ const DashboardLayout = ({ children }) => {
                                 <Link
                                     href={item.href}
                                     className={`block p-3 rounded-lg font-medium transition-all text-center md:text-left ${isActive
-                                            ? "bg-white text-white shadow-lg"
-                                            : "hover:bg-white hover:text-white"
+                                            ? "bg-blue-600"
+                                            : ""
                                         }`}
                                 >
                                     {item.name}

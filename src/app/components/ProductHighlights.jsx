@@ -85,7 +85,7 @@ export default function ProductHighlights() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-white shadow-md p-8 flex flex-col items-center text-center  hover:shadow-xl rounded-lg transform hover:scale-[1.02] transition-all duration-300"
+              className="bg-white shadow-md p-8 flex flex-col items-center text-center  hover:shadow-xl rounded-lg transform hover:scale-105 transition-all duration-300"
             >
               <div className="mb-6">{item.icon}</div>
               <h3 className="text-xl font-semibold mb-3 text-gray-800">{item.title}</h3>

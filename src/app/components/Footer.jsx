@@ -1,10 +1,14 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
-  return (
+  const pathname = usePathname();
+  if (!pathname.includes('user-dashboard')){
+    return (
     <footer className="bg-[#d1d5db] text-gray-700 mt-12">
-      <div className="max-w-11/12 mx-auto py-10 px-4 md:px-0 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-10/12 mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         
         {/* About */}
         <div>
@@ -33,7 +37,7 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-          <p className="text-sm">Email: mdfaruk@gmail.com</p>
+          <p className="text-sm">Email: mdfaruk01720875872@gmail.com</p>
           <p className="text-sm">Phone: +880 1720875872</p>
           <div className="flex gap-4 mt-3">
             <Link 
@@ -63,10 +67,15 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="border-t border-gray-300 mt-8 py-4 text-center text-sm">
-        © {new Date().getFullYear()} MyShop. All rights reserved.
+        © {new Date().getFullYear()} <span className="text-blue-500">MyShop</span>. All rights reserved.
       </div>
     </footer>
   );
+  }
+  else{
+    return <></>
+  }
+  
 };
 
 export default Footer;
