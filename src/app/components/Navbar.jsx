@@ -35,8 +35,8 @@ function NavbarContent() {
   }, []);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <nav className="bg-white shadow-md ">
+      <div className="max-w-10/12 mx-auto py-3 flex justify-between items-center">
         {/* Left side: MyStore + Hamburger */}
         <div className="flex items-center space-x-4">
           <div className="lg:hidden" ref={mobileRef}>
@@ -59,7 +59,7 @@ function NavbarContent() {
               </div>
             )}
           </div>
-          <Link href="/" className="text-2xl font-bold text-blue-600">MyStore</Link>
+          <Link href="/" className="text-2xl font-bold text-blue-600">MyShop</Link>
         </div>
 
         {/* Center links for large screens */}
@@ -81,7 +81,7 @@ function NavbarContent() {
               {userDropdownOpen && (
                 <div className="absolute right-0 mt-3 w-40 bg-white border rounded shadow-lg z-10">
                   <Link
-                    href="/dashboard/add-product"
+                    href="/user-dashboard"
                     className="block px-4 py-2 hover:bg-gray-100"
                     onClick={() => setUserDropdownOpen(false)}
                   >
